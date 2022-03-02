@@ -1,4 +1,4 @@
-﻿var arr = new Array.Array(15);
+﻿var arr = new Array.Array(7);
 arr.SetValue(4, 1);
 arr.SetValue(4, 2);
 arr.SetValue(2, 3);
