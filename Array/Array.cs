@@ -12,6 +12,32 @@ namespace Array
         public int Length { get; set; }
         protected Object[] InnerList { get; set; }
 
+      
+        
+        public object DoubleArray()
+        {
+            InnerList = new Array[Length];
+            var array = new Array[Length];
+            for (int i = 0; i < Length-1; i++)
+            {
+                array[i] = (Array)InnerList[i];
+            }
+            return array;
+
+        }
+        public object HalfArray()
+        {
+            var array = new Object[Length];
+            for (int i = Length; i >= Length/2; i--)
+            {
+                for (int j = 0; j < Length/2; j++)
+                {   
+                    
+                    array[j] = (Array)InnerList[i];
+                }
+            }
+            return $"{array} {InnerList}";       
+        }
         public object Clone()
         {
             return MemberwiseClone();
