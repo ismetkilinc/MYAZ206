@@ -20,7 +20,7 @@ namespace Array
             var array = new Array(Length);
             for (int i = 0; i < Length-1; i++)
             {
-                array.SetValue(i, i);
+                array.SetValue(InnerList.GetValue(i), i);
                 Console.WriteLine(array.GetValue(i));
             }
             
@@ -47,7 +47,7 @@ namespace Array
 
         public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new CustomArrayEnumerator(InnerList);
         }
         public Array(int Length)
         {
