@@ -14,18 +14,20 @@ namespace Array
 
       
         
-        public object DoubleArray()
+        public void DoubleArray()
         {
-            InnerList = new Array[Length];
-            var array = new Array[Length];
+
+            var array = new Array(Length);
             for (int i = 0; i < Length-1; i++)
             {
-                array[i] = (Array)InnerList[i];
+                array.SetValue(i, i);
+                Console.WriteLine(array.GetValue(i));
             }
-            return array;
+            
+            
 
         }
-        public object HalfArray()
+        public Object HalfArray()
         {
             var array = new Object[Length];
             for (int i = Length; i >= Length/2; i--)
@@ -38,7 +40,7 @@ namespace Array
             }
             return $"{array} {InnerList}";       
         }
-        public object Clone()
+        public Object Clone()
         {
             return MemberwiseClone();
         }
@@ -73,5 +75,17 @@ namespace Array
             InnerList[index] = value;
             
         }
-    }
+        public Array(params Object[] sourcearray):this(sourcearray.Length)
+        {
+            int c = 0;
+            foreach (var item in sourcearray)
+            {
+                InnerList[c] = item;
+                c++;
+            }
+        }
+        
+
+     }
 }
+
