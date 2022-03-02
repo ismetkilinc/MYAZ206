@@ -11,14 +11,14 @@ namespace Array
         public CustomArrayEnumerator(Object[] sourcearray)
         {
             _array = sourcearray;
-            index = -1;
+            index = sourcearray.Length;
         }
 
         public bool MoveNext()
         {
-            if (index < _array.Length-1)
+            if (index > 0)
             {
-                index++;
+                index--;
                 return true;
             }
             return false;
