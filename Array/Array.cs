@@ -20,7 +20,7 @@ namespace Array
             var array = new Array(Length);
             for (int i = 0; i < Length-1; i++)
             {
-                array.SetValue(InnerList.GetValue(i), i);
+                array.SetValue(GetValue(i), i);
                 Console.WriteLine(array.GetValue(i));
             }
             
